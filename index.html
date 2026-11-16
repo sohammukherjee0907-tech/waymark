@@ -1204,10 +1204,10 @@ function routeArt() {
   pins.forEach(function (p, i) {
     var last = i === pins.length - 1;
     if (last) kids.push(svg("circle", { class: "ping", cx: p[0], cy: p[1] - 14, r: 10 }));
-    var g = svg("g", { class: "pin" + (last ? " goal" : ""), style: "--i:" + i, transform: "translate(" + (p[0] - 9) + "," + (p[1] - 24) + ")" }, [
+    var g = svg("g", { transform: "translate(" + (p[0] - 9) + "," + (p[1] - 24) + ")" }, [svg("g", { class: "pin" + (last ? " goal" : ""), style: "--i:" + i }, [
       svg("path", { d: "M9 0C4 0 0 4 0 8.800 0 15.300 9 24 9 24s9-8.700 9-15.200C18 4 14 0 9 0z" }),
       svg("circle", { cx: 9, cy: 8.800, r: 3 })
-    ]);
+    ])]);
     kids.push(g);
   });
   return svg("svg", { class: "route-art", viewBox: "-6 -4 812 128", role: "img", "aria-label": "A dotted route crossing a map through five waypoints" }, kids);
