@@ -3,7 +3,25 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Waymark Completion Tracker</title>
+<title>Waymark | Free 100% Checklists for Open-World Games</title>
+<meta name="description" content="Free 100% completion checklists for Elden Ring, Zelda, Spider-Man, GTA V, Cyberpunk 2077, Red Dead Redemption 2 and more. Tick off bosses, collectibles and quests as you play. No sign-up.">
+<link rel="canonical" href="https://sohammukherjee0907-tech.github.io/waymark/">
+<meta name="theme-color" content="#0b1211">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-3 0 26 26'%3E%3Cpath d='M10 0C4.5 0 0 4.4 0 9.8 0 17 10 26 10 26s10-9 10-16.2C20 4.4 15.5 0 10 0z' fill='%23f5b21f'/%3E%3Ccircle cx='10' cy='9.8' r='3.6' fill='%230b1211'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="https://sohammukherjee0907-tech.github.io/waymark/icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Waymark">
+<meta property="og:title" content="Waymark | Free 100% Checklists for Open-World Games">
+<meta property="og:description" content="Free 100% completion checklists for Elden Ring, Zelda, Spider-Man, GTA V, Cyberpunk 2077, Red Dead Redemption 2 and more. Tick off bosses, collectibles and quests as you play. No sign-up.">
+<meta property="og:url" content="https://sohammukherjee0907-tech.github.io/waymark/">
+<meta property="og:image" content="https://sohammukherjee0907-tech.github.io/waymark/preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Waymark | Free 100% Checklists for Open-World Games">
+<meta name="twitter:description" content="Free 100% completion checklists for Elden Ring, Zelda, Spider-Man, GTA V, Cyberpunk 2077, Red Dead Redemption 2 and more. Tick off bosses, collectibles and quests as you play. No sign-up.">
+<meta name="twitter:image" content="https://sohammukherjee0907-tech.github.io/waymark/preview.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Waymark","url":"https://sohammukherjee0907-tech.github.io/waymark/","description":"Free 100% completion checklists for Elden Ring, Zelda, Spider-Man, GTA V, Cyberpunk 2077, Red Dead Redemption 2 and more. Tick off bosses, collectibles and quests as you play. No sign-up."}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
@@ -325,7 +343,7 @@ button.cta { border: 0; cursor: pointer; }
 .intro-kicker { display: block; font-family: var(--font-display); font-weight: 600; font-size: 15px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--marker); animation: rise 0.6s 0.1s both; }
 .intro-bar { display: block; height: 4px; width: min(240px, 50vw); margin: 16px auto 0; background: var(--marker); animation: bar 0.9s 0.7s cubic-bezier(.2,.8,.2,1) both; }
 @keyframes bar { from { transform: scaleX(0); } to { transform: none; } }
-.intro-skip { position: absolute; left: 0; right: 0; bottom: 18px; text-align: center; color: rgba(255,255,255,0.6); font-size: 13px; }
+.intro-skip { position: absolute; left: 50%; transform: translateX(-50%); bottom: 16px; padding: 4px 12px; border-radius: 999px; background: rgba(0,0,0,0.55); color: rgba(255,255,255,0.8); font-size: 13px; white-space: nowrap; }
 
 .soon-panel { background: var(--surface); border: 1px dashed var(--muted); border-radius: 18px; padding: 28px 22px; display: flex; flex-direction: column; gap: 14px; }
 .soon-panel h2 { font-family: var(--font-display); font-weight: 900; font-size: clamp(46px, 13vw, 96px); line-height: 0.9; text-transform: uppercase; margin: 0; text-wrap: balance; }
@@ -348,6 +366,7 @@ footer p { margin: 0 0 6px; max-width: 72ch; }
 </style>
 </head>
 <body>
+<noscript><div style="max-width:760px;margin:0 auto;padding:24px 16px;color:#e8efe9;font-family:sans-serif"><h1>Waymark: free 100% checklists for open-world games</h1><p>Tick off bosses, collectibles, quests and endings as you play. Checklists for Elden Ring, Breath of the Wild, Tears of the Kingdom, Ocarina of Time, Horizon Zero Dawn, Ghost of Tsushima, GTA V, Cyberpunk 2077, Red Dead Redemption 2, The Witcher 3, Skyrim, Marvel's Spider-Man, Spider-Man: Miles Morales and Marvel's Spider-Man 2. Turn on JavaScript to use the tracker.</p></div></noscript>
 <canvas id="bg" aria-hidden="true"></canvas>
 <div class="wrap">
   <header class="top">
@@ -1502,6 +1521,7 @@ function renderTabs(game) {
 function render() {
   var game = route();
   renderTabs(game);
+  document.title = game ? game.name + " 100% Checklist | Waymark" : "Waymark | Free 100% Checklists for Open-World Games";
   var view = document.getElementById("view");
   view.textContent = "";
   view.className = game ? "game" : "";
